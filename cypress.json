@@ -1,0 +1,25 @@
+{
+  "reporter": "@zebrunner/javascript-agent-cypress",
+  "reporterOptions": {
+    "reportingServerHostname": "It is Zebrunner server hostname. It can be obtained in Zebrunner on the 'Account & profile' page under the 'Service URL' section",
+    "reportingServerAccessToken": "Access token must be used to perform API calls. It can be obtained in Zebrunner on the 'Account & profile' page under the 'Token' section",
+    "reportingProjectKey": "DEF",
+    "reportingRunEnvironment": "DEMO",
+    "reportingRunBuild": "1.0-build",
+    "reportingRunDisplayName": "Cypress demo tests",
+    "reportingRunLocale": "en_US",
+    "reportingTestrailEnabled": "",
+    "reportingTestrailSuiteId": "",
+    "reportingTestrailTestrunName": "",
+    "reportingTestrailTestrunID": "",
+    "reportingTestrailMilestone": "",
+    "reportingTestrailAssignee": "",
+    "reportingTestrailIncludeAll": "",
+    "reportingXrayEnabled": "",
+    "reportingXrayTestExecutionKey": "",
+    "reportingLoggingEnabled": true,
+    "reportingLoggingLevel": "debug",
+    "reportingSlackChannels": "qatests",
+    "reportingEmailRecipients": ""
+  }
+}

@@ -3,8 +3,8 @@ import { ProjectCard } from "./components/ProjectCard";
 
 class ProjectsPage {
   constructor() {
-    this.newProjectButtonLocator = ".zeb-page-subheader__actions > .gtm-project-button";
-    this.projectCardsLocator = ".projects-table.ng-scope._extended > .projects-table__row";
+    this.newProjectButtonLocator = "//button[text()='Projects']";
+    this.projectCardsLocator = ".//div[@class='projects-table__row']";
   }
 
   visit() {
@@ -12,7 +12,7 @@ class ProjectsPage {
   }
 
   assertPageOpened() {
-    cy.get(this.newProjectButtonLocator).should("be.visible"); // Project's page is not opened
+    cy.xpath(this.newProjectButtonLocator,{timeout:50000}).first().should("be.visible"); // Project's page is not opened
   }
 
   getProjectCardByKey(key) {

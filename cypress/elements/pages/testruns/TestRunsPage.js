@@ -5,27 +5,32 @@ import AssignToMilestoneModal from "./components/AssignToMilestoneModal";
 
 class TestRunsPage {
   constructor() {
-    this.launchButton = "//span[text()='Launcher']/ancestor::button";
+    this.launchButton = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-disableElevation button   css-1obwva5']";
     this.popUp = "//span[contains(@class,'md-toast-text ng-binding')]";
     this.testRunCards = "//div[@class='test-run-card ng-scope ng-isolate-scope']";
   }
 
   clickLaunch() {
-    cy.xpath(this.launchButton).click({ force: true });
+   
+    // cy.xpath(this.launchButton,{timeout:2000000}).first().should('be.visible');
+    cy.xpath(this.launchButton, { timeout: 500000 }).click({ force: true });
     return new LaunchersPage();
   }
 
   visitByProjectKey(key) {
-    cy.visit(Cypress.env("TENANT_URL") + "/projects/" + key + "/automation-launches", { failOnStatusCode: false });
+    cy.visit(Cypress.env("TENANT_URL") + "/projects/" + key + "/automation-launches", {failOnStatusCode: false});
+    cy.url().should("contain", Cypress.env("TENANT_URL") + "/projects/" + key + "/automation-launches")
   }
 
   assertOpened() {
-    cy.xpath(this.launchButton, { timeout: 15000 }).should("be.visible", { timeout: 15000 });
+    cy.url().should("contain", "automation-launches", { timeout: 15000 });
+
+    cy.xpath(this.launchButton, { timeout: 50000 }).should("be.visible", { timeout: 15000 });
     return this;
   }
 
   assertOpenedByProjectKey(key) {
-    cy.url().should("eq", Cypress.env("TENANT_URL") + "/projects/" + key + "/automation-launches");
+    cy.url().should("contain", Cypress.env("TENANT_URL") + "/projects/" + key + "/automation-launches");
   }
 
   getTestRunCardByName(cardName) {

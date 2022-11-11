@@ -2,11 +2,11 @@ import ProjectsActionsMenu from "./ProjectsActionsMenu";
 
 class TenantHeader {
   constructor() {
-    this.projectsButton = "//div[@class='app-header__logo']/following-sibling::div[@class='app-header__project']";
+    this.projectsButton = "//*[@class='projects-dropdown']/button";
   }
 
   openProjectsActionsMenu() {
-    cy.xpath(this.projectsButton).click();
+    cy.xpath(this.projectsButton).click( {timeout: 75000});
     return new ProjectsActionsMenu();
   }
 }

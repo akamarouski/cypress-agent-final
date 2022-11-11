@@ -2,22 +2,23 @@ import { data } from "../../fixtures/tenantConfig";
 
 class LoginPage {
   constructor() {
-    this.usernameField = "//input[@name='username']";
-    this.passwordField = "//input[@name='password']";
+    this.usernameField = "//*[@id='accessKey']";
+    this.passwordField = "//*[@id='password']";
     this.submitButton = "//button[@type='submit']";
   }
 
   visit() {
     cy.visit(data.baseUrl + "/signin", { failOnStatusCode: false });
-    cy.url().should("contain", "komar.zebrunner.dev");
+    cy.url().should("contain", data.baseUrl);
   }
 
   fillUsername(username) {
-    cy.xpath(this.usernameField).type(username, { log: false });
+    cy.wait(10);
+    cy.xpath(this.usernameField).type(username, { log: false , timeout: 15000});
   }
 
   fillPassword(password) {
-    cy.xpath(this.passwordField).type(password, { log: false });
+    cy.xpath(this.passwordField).type(password, { log: false , timeout: 15000 });
   }
 
   submit() {
@@ -26,7 +27,7 @@ class LoginPage {
 
   login(username, password) {
     this.visit();
-    this.fillUsername(username, { timeout: 15000 });
+    this.fillUsername(username, { timeout: 35000 });
     this.fillPassword(password, { timeout: 15000 });
     this.submit();
   }

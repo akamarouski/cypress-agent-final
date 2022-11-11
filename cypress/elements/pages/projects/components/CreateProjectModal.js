@@ -3,10 +3,10 @@ import ProjectsPage from "../ProjectsPage";
 
 class CreateProjectModal {
   constructor() {
-    this.nameInput = "//input[contains(@name,'projectName')]";
-    this.keyInput = "//input[contains(@name,'projectKey')]";
-    this.cancelButton = "//span[text()='cancel']/ancestor::button";
-    this.createButton = "//span[text()='save' or text()='create']/ancestor::button";
+    this.nameInput = "//*[@id='name']";
+    this.keyInput = "//*[@id='key']";
+    this.cancelButton = "//*[text()='Cancel']//ancestor::button";
+    this.createButton = "//*[text()='Create']//ancestor::button";
   }
 
   assertOpened() {

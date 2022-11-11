@@ -6,10 +6,10 @@
     "cypress": "^9.7.0",
     "cypress-localstorage-commands": "2.2.0",
     "cypress-wait-until": "^1.7.2",
-    "cypress-xpath": "^1.6.2"
+    "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
-    "@zebrunner/javascript-agent-cypress": "^1.0.31-alpha114",
+    "@zebrunner/javascript-agent-cypress": "^1.0.37",
     "axios": "^0.27.2"
   }
 }

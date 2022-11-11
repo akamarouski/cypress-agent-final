@@ -3,8 +3,8 @@ import CreateProjectModal from "./CreateProjectModal";
 
 class ProjectsActionsMenu {
   constructor() {
-    this.createProjectButton = "//div[contains(@class,'md-select-menu-container project-settings__select')]//span[text()='Create a Project']";
-    this.viewAllProjectsButton = "//div[@class='project-settings__button']";
+    this.createProjectButton = "//*[text()='Create a Project']";
+    this.viewAllProjectsButton = "//*[text()='View all Projects']";
   }
 
   createProject() {

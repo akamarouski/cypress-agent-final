@@ -4,7 +4,7 @@ class LoginPage {
   constructor() {
     this.usernameField = "//*[@id='accessKey']";
     this.passwordField = "//*[@id='password']";
-    this.submitButton = "//button[@type='submit']";
+    this.submitButton = "//button[text()='Login']";
   }
 
   visit() {

@@ -97,7 +97,7 @@ describe("Smoke tests", () => {
       launchFirstTime.assertOpened();
       launchFirstTime.fillUrl(testdata.gitHubUrl);
       const launchersPage = launchFirstTime.clickAddRepo();
-      cy.wait(30000);
+      cy.wait(10000);
       launchersPage.assertOpened();
       cy.wait(3000)
     });

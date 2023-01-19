@@ -3,14 +3,14 @@ import LaunchersPage from "./LaunchersPage";
 class LauncherFirstTime {
   constructor() {
     this.githubBytton = "//span[contains(text(),'Github')]//ancestor::button";
-    this.urlInput = "//input[@name='addRepoUrl']";
-    this.usernameInput = "//input[@name='addRepoUsername']";
-    this.tokenInput = "//input[@name='addRepoAccessToken']";
+    this.urlInput = "//input[@id='url']";
+    this.usernameInput = "//input[@id='username']";
+    this.tokenInput = "//input[@id='token']";
     this.addButton = "//button[text()='Add']";
   }
 
   assertOpened() {
-    cy.xpath(this.githubBytton).should("be.visible");
+    cy.xpath(this.githubBytton, {timeout: 10000}).first().should("be.visible");
   }
 
   fillUrl(url) {

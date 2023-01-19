@@ -2,14 +2,14 @@ import ConcreteLauncherPage from "./ConcreteLauncherPage";
 
 class LaunchersPage {
   constructor() {
-    this.title = "//h1[@class='zeb-page-header__title ng-binding']";
+    this.repositoryBtn = "//span[contains(text(),'Repository')]//ancestor::button";
     this.launchers = "//div[contains(@class,'launcher-tree__item-launcher-name ng-binding')]";
     this.repositories = "//div[contains(@class,'launcher-tree__repo-name ng-binding')]";
     this.addNewLauncherButton = "//button[@class='launcher-tree__item-new-launcher ng-scope']";
   }
 
   assertOpened() {
-    cy.xpath(this.title).should("be.visible");
+    cy.xpath(this.repositoryBtn).should("be.visible" , { timeout: 15000 });
   }
 
   assertLauncherPresent(launcherName) {

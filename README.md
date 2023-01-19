@@ -1,2 +1,2 @@
 # cypress-agent
-To execute tests use docker image `cypress/browsers`, launch command `npm install && npx cypress run --browser chrome` and set required env variables
+To execute tests use docker image `public.ecr.aws/zebrunner/cypress:latest`, launch command `npm install && npx cypress run --headed --spec cypress/integration/*.cy.js` and set required env variables

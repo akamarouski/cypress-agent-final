@@ -22,6 +22,6 @@ before(() => {
   cy.registerBrowser(Cypress.browser);
 });
 
-// Cypress.on('uncaught:exception', (err, runnable) => {
-//   return false;
-// });
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});

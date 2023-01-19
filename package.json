@@ -9,7 +9,7 @@
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
-    "@zebrunner/javascript-agent-cypress": "^1.0.37",
+    "@zebrunner/javascript-agent-cypress": "^1.0.43",
     "axios": "^0.27.2"
   }
 }
